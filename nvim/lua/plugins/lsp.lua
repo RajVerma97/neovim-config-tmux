@@ -19,6 +19,12 @@ return {
 	-- lsp servers
 	{
 		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
+ 			 dependencies = {
+  	  "hrsh7th/cmp-nvim-lsp",
+ 	   { "antosha417/nvim-lsp-file-operations", config = true },
+  	  { "folke/neodev.nvim", opts = {} },
+  },
 		opts = {
 			inlay_hints = { enabled = false },
 			---@type lspconfig.options

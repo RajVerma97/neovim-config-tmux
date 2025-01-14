@@ -33,7 +33,7 @@ require("lazy").setup({
 		-- { import = "lazyvim.plugins.extras.lang.markdown" },
 		{ import = "lazyvim.plugins.extras.lang.rust" },
 		{ import = "lazyvim.plugins.extras.lang.tailwind" },
-		{ import = "lazyvim.plugins.extras.ai.copilot" },
+		--{ import = "lazyvim.plugins.extras.ai.copilot" },
 		-- { import = "lazyvim.plugins.extras.dap.core" },
 		-- { import = "lazyvim.plugins.extras.vscode" },
 		{ import = "lazyvim.plugins.extras.util.mini-hipatterns" },
@@ -42,6 +42,8 @@ require("lazy").setup({
 		-- { import = "lazyvim.plugins.extras.editor.mini-files" },
 		-- { import = "lazyvim.plugins.extras.util.project" },
 		{ import = "plugins" },
+		{ "blink.cmp", enabled = false },
+		{ "nvim-neo-tree/neo-tree.nvim", enabled = false },
 	},
 	defaults = {
 		-- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -73,6 +75,7 @@ require("lazy").setup({
 				"tohtml",
 				"tutor",
 				"zipPlugin",
+			
 			},
 		},
 	},
