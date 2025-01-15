@@ -129,6 +129,7 @@
                     },
                     {
                         "description": "Remap cmd+left/right to option+left/right for word navigation",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -178,6 +179,7 @@
                     },
                     {
                         "description": "Swap Control with Option (Caps Lock aware)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
