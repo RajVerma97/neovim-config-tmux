@@ -178,7 +178,6 @@
                     },
                     {
                         "description": "Swap Control with Option (Caps Lock aware)",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {

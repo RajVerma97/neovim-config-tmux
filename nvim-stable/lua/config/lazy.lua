@@ -41,11 +41,28 @@ require("lazy").setup({
 		-- { import = "lazyvim.plugins.extras.coding.yanky" },
 		-- { import = "lazyvim.plugins.extras.editor.mini-files" },
 		-- { import = "lazyvim.plugins.extras.util.project" },
-		{ "hrsh7th/nvim-cmp", enabled = true},
-
+		
 		{ import = "plugins" },
-		{ "blink.cmp", enabled = false },
+
+		{ "hrsh7th/nvim-cmp", enabled = true},
+		--  { "blink.cmp", enabled = false },
 		{ "nvim-neo-tree/neo-tree.nvim", enabled = false },
+		{
+		"saghen/blink.cmp",
+		opts = {
+			completion = {
+				menu = {
+					winblend = vim.o.pumblend,
+				},
+			},
+			signature = {
+				enabled=false,
+				window = {
+					winblend = vim.o.pumblend,
+				},
+			},
+		},
+	},
 
 	},
 	defaults = {
