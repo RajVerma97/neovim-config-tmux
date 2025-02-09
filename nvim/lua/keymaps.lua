@@ -61,3 +61,30 @@ keymap.set("n", "<C-Left>", "<C-w><", { desc = "Decrease window width" })
 keymap.set("n", "<C-Right>", "<C-w>>", { desc = "Increase window width" })
 keymap.set("n", "<C-Up>", "<C-w>+", { desc = "Increase window height" })
 keymap.set("n", "<C-Down>", "<C-w>-", { desc = "Decrease window height" })
+
+
+keymap.set("n", "<leader>o", ":silent !open .<CR>", { desc = "Open current directory in Finder" })
+
+
+--Open the current file  neo tree
+keymap.set('n', '<leader>fr', ':Neotree reveal<CR>', {})
+
+-- Open in Finder from Neotree
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "neo-tree",
+    callback = function()
+        vim.keymap.set("n", "<leader>o", function()
+            local node = require("neo-tree.sources.filesystem.commands").get_current_node()
+             if node then
+              
+                if node.type == "file" then
+                    vim.fn.system(string.format("open -R '%s'", abs_path))
+                else
+                    vim.fn.system(string.format("open '%s'", abs_path))
+                end
+            else
+                print("No node found under cursor")
+            end
+        end, { buffer = true, desc = "Open in Finder" })
+    end
+})
